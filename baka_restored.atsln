@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "baka_restored", "baka_restored\baka_restored.cproj", "{8C2E907B-6EE1-476C-A0D6-ABA87DB65B04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C2E907B-6EE1-476C-A0D6-ABA87DB65B04}.Debug|ARM.ActiveCfg = Debug|ARM
+		{8C2E907B-6EE1-476C-A0D6-ABA87DB65B04}.Debug|ARM.Build.0 = Debug|ARM
+		{8C2E907B-6EE1-476C-A0D6-ABA87DB65B04}.Release|ARM.ActiveCfg = Release|ARM
+		{8C2E907B-6EE1-476C-A0D6-ABA87DB65B04}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

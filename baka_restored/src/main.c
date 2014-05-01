@@ -163,10 +163,7 @@ void SysTick_Handler(void)
 int startGenerating(){
 	if (ch0_ss>0 && checkSelectedSample(ch0_ss-1)) ch0=true;
 	if (ch1_ss>0 && checkSelectedSample(ch1_ss-1)) ch1=true;
-	ch0=true;
-	ch0_ss=10;
-	ch1=true;
-	ch1_ss=11;
+	
 	if (!(ch0 || ch1)) return 0;
 	if (ch0 && ch1){
 		if (samples.file_frequencies[ch0_ss-1]!=samples.file_frequencies[ch1_ss-1]){
@@ -218,7 +215,7 @@ int main(void){
 	r=scan_files("/");	
 	gpio_set_pin_high(LED1_GPIO);
 		
-	//while (!gpio_pin_is_low(BUT0_GPIO));
+	while (!gpio_pin_is_low(BUT0_GPIO));
 	ch0_ss = getSelectedSample(0);
 	ch1_ss = getSelectedSample(1);
 	int state;
@@ -246,8 +243,8 @@ int main(void){
 	else {
 		goto card_init;
 	}
-	while(1);
-	//while (gpio_pin_is_high(BUT0_GPIO));
+	
+	while (gpio_pin_is_high(BUT0_GPIO));
 	
 	close_files:
 	f_close(&sample0);

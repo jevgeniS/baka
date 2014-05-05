@@ -203,7 +203,7 @@ int main(void){
 	configure_dacc();
 	sd_mmc_init();
 	card_init:
-	gpio_set_pin_low(LED0_GPIO);
+	gpio_set_pin_low(LED2_GPIO);
 	while (CTRL_GOOD != sd_mmc_test_unit_ready(0));
 	r=sd_mmc_check(0);
 	r = f_mount(0, &fs);
@@ -215,7 +215,8 @@ int main(void){
 	r=scan_files("/");	
 	gpio_set_pin_high(LED1_GPIO);
 		
-	while (!gpio_pin_is_low(BUT0_GPIO));
+	while (gpio_pin_is_low(BUT0_GPIO));
+	
 	ch0_ss = getSelectedSample(0);
 	ch1_ss = getSelectedSample(1);
 	int state;
@@ -224,7 +225,7 @@ int main(void){
 	state=startGenerating();
 	if (state==1){
 		
-		gpio_set_pin_high(LED0_GPIO);
+		gpio_set_pin_high(LED2_GPIO);
 	
 		if (ch0 && ch1 && !common_file){
 			if (current_freq>MAX_FREQ_2FILES)
